@@ -1,0 +1,32 @@
+version: 2
+
+config:
+    send_anonymous_usage_stats: False
+    use_colors: True
+
+integration_tests:
+  target: snowflake
+  inputs:
+    snowflake:
+      type: snowflake
+      account: lb97461.uk-south.azure
+      user: VVMurali2167
+      password: VigneshR2!67
+      role: ACCOUNTADMIN
+      database: SNOWFLAKE_SAMPLE_DATA
+      warehouse: COMPUTE_WH
+      schema: TPCDS_SF100TCL
+      threads: 10
+        client_session_keep_alive: false
+  outputs:
+    snowflake:
+      type: snowflake
+      account: lb97461.uk-south.azure
+      user: VVMurali2167
+      password: VigneshR2!67
+      role: ACCOUNTADMIN
+      database: RAW
+      warehouse: COMPUTE_WH
+      schema: PUBLIC
+      threads: 10
+      client_session_keep_alive: false
